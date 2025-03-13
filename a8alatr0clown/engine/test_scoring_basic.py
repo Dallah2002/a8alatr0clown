@@ -154,7 +154,7 @@ def test_score_full_house():
     """Full House: 40 +10*3 +10*2=90. Mult 4."""
     c = _generate_card_fixtures()
     hs = HandSolver()
-    hand = Hand([c["KH1"], c["KH2"], c["KH3"], c["QH1"], c["QH2"]])
+    hand = Hand([c["KH1"], c["KH2"], c["KD"], c["QH1"], c["QH2"]])
     assert hs.compute_hand_score(hand) == (360, 90, 4)
 
 def test_score_four_of_a_kind():
@@ -182,7 +182,7 @@ def test_score_five_of_a_kind():
     """Five of a Kind:120 +10*5=170. Mult12."""
     c = _generate_card_fixtures()
     hs = HandSolver()
-    hand = Hand([c["KH1"], c["KH2"], c["KH3"], c["KH4"], c["KH5"]])
+    hand = Hand([c["KH1"], c["KH2"], c["KH3"], c["KH4"], c["KD"]])
     assert hs.compute_hand_score(hand) == (2040, 170, 12)
 
 def test_score_flush_house():
